@@ -32,16 +32,33 @@ If there is an item with a taxon that does not contain "pm-" in its name, the it
 
 ### Prerequisites
 
-* Create a flat taxonomy of type "Permissions" that will relate the dynamic content item to the corresponding role. 
+* Create a flat taxonomy of type "Permissions" that will relate the dynamic content item to the corresponding role. See
+[Creating and editing a custom classification](http://www.sitefinity.com/documentation/documentationarticles/user-guide/website-content/classifying-your-content/creating-custom-classifications/creating-and-editing-a-custom-classification)
 * Create several permissions taxons with the same names as the roles, for example "pm-enterprise" and "pm-standard". If you want to make the dynamic item visible to everyone, create a "pm-everyone" taxon. 
+See
+[Creating and editing single classification items](http://www.sitefinity.com/documentation/documentationarticles/user-guide/website-content/classifying-your-content/creating-custom-classifications/creating-and-editing-single-classification-items)
 * Create 2 Sitefinity roles - "pm-enterprise" and "pm-standard".
+See
+[Creating and deleting roles](http://www.sitefinity.com/documentation/documentationarticles/installation-and-administration-guide/users-roles-and-permissions/managing-roles/creating-and-deleting-roles)
 * Create 2 users and assign the roles from the previous step to the users.
+See
+[Creating and deleting users](http://www.sitefinity.com/documentation/documentationarticles/installation-and-administration-guide/users-roles-and-permissions/managing-users/creating-and-deleting-users)
 * Create a module in the Module builder with classification field of type "Permissions"
+See
+[Creating the dynamic module](http://www.sitefinity.com/documentation/documentationarticles/creating-the-custom-module)
 * Activate the module.
+See
+[Activating and deactivating a dynamic module   ](http://www.sitefinity.com/documentation/documentationarticles/activating-and-deactivating-a-module)
 * Create several dynamic content items with taxons corresponding to the permissions the items have.
+See
+[Creating a dynamic content item](http://www.sitefinity.com/documentation/documentationarticles/user-guide/website-content/creating-and-using-custom-modules/using-your-custom-module/creating-a-custom-content-item)
 * Create a Sitefinity page.
+See
+[Creating a new page](http://www.sitefinity.com/documentation/documentationarticles/user-guide/pages/creating-a-new-page)
 * Drag and drop the dynamic widget to the page.
-* Publish the page. 
+See
+[Adding widgets on your page](http://www.sitefinity.com/documentation/documentationarticles/user-guide/widgets/adding-widgets-on-your-page)
+* Publish the page
 
 ### Installation instructions
 
