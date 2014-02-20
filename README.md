@@ -3,17 +3,22 @@ dynamic-module-view-granular-permissions
 
 Add Read-Only permissions for dynamic content items
 
+dynamic-module-view-granular-permissions
+========================================
+
+Add Read-Only permissions for dynamic content items
+
 ## Real sample
 
 Your Sitefinity website supports different marketing reports. According to the role of the user, he/she must see different reports. For example:
 
-Enterprise report - will be viewed only by users of role "pm-enterprise". 
+**Enterprise report** - will be viewed only by users of role "pm-enterprise". 
 
-Standard report - will be viewed by users of role "pm-standard".
+**Standard report** - will be viewed by users of role "pm-standard".
 
-Everyone report - will be biewed by everyone.
+**Everyone report** - will be biewed by everyone.
 
-Everyone and Standard report - will be viewed for both users with roles "pm-enterprise" and users with role "pm-standard". 
+**Everyone and Standard report** - will be viewed for both users with roles "pm-enterprise" and users with role "pm-standard". 
 
 Administrators will see all reports no matter what permissions they have as their role is unrestricted.
 
@@ -40,6 +45,44 @@ If there's an item with any taxon that does not contains "pm" in the name, the i
 * Create Sitefinity Page.
 * Drag the dynamic widget to the page.
 * Publish the page. 
+
+### Installation instructions
+
+Installation instructions:
+
+1. Add the code to a solution in which you have Sitefinity Web Application project.
+
+2. Open ToolboxesConfig.config from ~/App_Data/Sitefinity/Configuration and open it for edit.
+
+3. Find your custom module in ContentToolboxSection and replace the type with **SitefinityWebApp.DynamicContentViewCustom**. See the example below:
+
+```xml
+<toolboxesConfig xmlns:config="urn:telerik:sitefinity:configuration"
+ xmlns:type="urn:telerik:sitefinity:configuration:type" config:version="6.X.XXXX.0">
+	<toolboxes>
+		<toolbox name="PageControls">
+			<sections>
+				<add name="ContentToolboxSection">
+					<tools>
+...
+<add enabled="True" type="SitefinityWebApp.DynamicContentViewCustom,
+ Telerik.Sitefinity" title="reports" cssClass="sfNewsViewIcn"
+ moduleName="Marketing Reports" 
+DynamicContentTypeName="Telerik.Sitefinity.DynamicTypes.Model.MarketingReports.Report" 
+DefaultMasterTemplateKey="ef053cf3-9cb3-6844-bebb-ff00005ebe0b" 
+DefaultDetailTemplateKey="f0053cf3-9cb3-6844-bebb-ff00005ebe0b" visibilityMode="None" 
+name="Telerik.Sitefinity.DynamicTypes.Model.MarketingReports.Report
+/>
+
+```
+
+
+
+
+
+*Build the solution and you should be good to go.*
+
+*Happy coding!*
 
 ### Requirements
 
