@@ -3,11 +3,6 @@ dynamic-module-view-granular-permissions
 
 Add Read-Only permissions for dynamic content items
 
-dynamic-module-view-granular-permissions
-========================================
-
-Add Read-Only permissions for dynamic content items
-
 ## Real sample
 
 Your Sitefinity website supports different marketing reports. According to the role of the user, he/she must see different reports. For example:
