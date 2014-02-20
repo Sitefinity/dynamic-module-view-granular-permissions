@@ -20,14 +20,12 @@ namespace SitefinityWebApp
         {
         }
 
-        public Dictionary<Guid, string> permissionsTaxa = new Dictionary<Guid, string>();
-
         protected override void InitializeControls(Telerik.Sitefinity.Web.UI.GenericContainer container)
         {
             base.InitializeControls(container);
 
-            List<string> tagNames = new List<string>();
-            GetAllTagNamesForDataItem(tagNames);
+            List<string> taxonNames = new List<string>();
+            GetAllTaxonNamesForDataItem(taxonNames);
 
             //gets the current user
             var user = ClaimsManager.GetCurrentIdentity();
@@ -40,7 +38,7 @@ namespace SitefinityWebApp
                 bool isDynamicItemAllowed = false;
 
                 //always allowed for everyone
-                if (tagNames.Contains("pm-everyone"))
+                if (taxonNames.Contains("pm-everyone"))
                 {
                     isDynamicItemAllowed = true;
                     return;
@@ -49,7 +47,7 @@ namespace SitefinityWebApp
                 foreach (var roleName in currentUserRoleNames)
                 {
                     //filter dynamic items for Enterprise customers
-                    if (tagNames.Contains(roleName))
+                    if (taxonNames.Contains(roleName))
                     {
                         isDynamicItemAllowed = true;
                         break;
@@ -63,15 +61,15 @@ namespace SitefinityWebApp
             }
         }
 
-        private void GetAllTagNamesForDataItem(List<string> tagNames)
+        private void GetAllTaxonNamesForDataItem(List<string> taxonNames)
         {
             //get all tags for a data item
-            var tagIds = base.DataItem.GetValue<TrackedList<Guid>>("permissions");
+            var taxaIds = base.DataItem.GetValue<TrackedList<Guid>>("permissions");
             TaxonomyManager taxaManager = new TaxonomyManager();
-            foreach (var tagId in tagIds)
+            foreach (var taxaId in taxaIds)
             {
-                var taxa = taxaManager.GetTaxa<Taxon>().Where(t => t.Id == tagId).Single();
-                tagNames.Add(taxa.Name.ToLower());
+                var taxa = taxaManager.GetTaxa<Taxon>().Where(t => t.Id == taxaId).Single();
+                taxonNames.Add(taxa.Name.ToLower());
             }
         }
 
