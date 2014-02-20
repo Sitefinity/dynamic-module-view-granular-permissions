@@ -21,7 +21,9 @@ In case you need to create a custom role that restricts dynamic items:
 * Make sure the name of the role starts  with "pm-". This name tells the system the new role is specifically used to control the visibility of dynamic content items. 
 * Create a permission taxon with the same name as the role. Thus, items that contain this taxon can be viewed only by users that have this specific role assigned, as the role name is the same as the name of the taxon.
 
-If there is an item with a taxon that does not contain "pm-" in its name, the item is not displayed to other cuastom roles whose names start with "pm-". If you want to make a dynamic item visible to everyone, create a "pm-everyone" taxon and associate it to the specific item.
+If there is an item with a taxon that does not contain "pm-" in its name, the item is not displayed to other cuastom roles whose names start with "pm-". If you want to make a dynamic item visible to everyone, create a "pm-everyone" taxon and associate it to the specific item. 
+
+In case user with specific role that starts with "pm-" tries to access item that he does not have permissions, a 403 error will be returned.
 
 ------
 
