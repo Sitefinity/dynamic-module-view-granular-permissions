@@ -25,7 +25,7 @@ If there's an item with any taxon that does not contains "pm" in the name, the i
 
 ### Video example
  
-[![video example](http://content.screencast.com/users/Veronica_Milcheva/folders/Default/media/3b2519ab-b235-4137-b1e4-fe5577cf212b/image.png)](http://www.screencast.com/t/2eTLJrMeG){:target="_blank"}
+[![video example](http://content.screencast.com/users/Veronica_Milcheva/folders/Default/media/3b2519ab-b235-4137-b1e4-fe5577cf212b/image.png)](http://www.screencast.com/t/2eTLJrMeG)
 
 
 ### Prerequisites
